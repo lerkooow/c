@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  margin-top: 16px;
+
+  p {
+    font-size: 40px;
+    font-family: "Great Vibes", cursive;
+  }
+}

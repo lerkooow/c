@@ -1,0 +1,91 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+  width: 100%;
+  padding: 0 12px;
+
+  &__container {
+    border-radius: 20px;
+    color: #6a90b5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+      radial-gradient(ellipse 200px 150px at 0% 0%, rgba(248, 210, 190, 0.9) 0%, transparent 70%), radial-gradient(ellipse 180px 180px at 100% 0%, rgba(196, 218, 237, 0.7) 0%, transparent 65%),
+      radial-gradient(ellipse 160px 140px at 100% 100%, rgba(237, 210, 196, 0.8) 0%, transparent 65%), radial-gradient(ellipse 200px 160px at 0% 100%, rgba(196, 218, 237, 0.6) 0%, transparent 70%),
+      #fdf5e9;
+  }
+
+  &__eyebrow {
+    font-size: 14px;
+    color: #a0bbd6 !important;
+    margin-bottom: 4px;
+    margin-left: 12px;
+    font-weight: 400 !important;
+  }
+
+  &__titleRow {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-left: 12px;
+  }
+
+  &__title {
+    font-size: 24px;
+    color: #4a6a8a;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 24px;
+    text-transform: uppercase;
+    color: #6a90b5;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 400;
+
+    span {
+      font-size: 40px;
+      font-family: "Great Vibes", cursive;
+      text-transform: lowercase;
+      line-height: 0.9;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  span {
+    color: #4a6a8a;
+    font-weight: 600;
+  }
+
+  &__button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #a0bbd6;
+    text-decoration: none;
+    color: #fdf5e9 !important;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 7px 16px;
+    margin-top: 4px;
+
+    &:hover {
+      background-color: #516b88;
+    }
+
+    span {
+      color: #fdf5e9 !important;
+      font-weight: 300 !important;
+    }
+  }
+}
