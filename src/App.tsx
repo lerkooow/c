@@ -17,6 +17,7 @@ import s from "./App.module.scss";
 
 function App() {
   const [isLoaderVisible, setIsLoaderVisible] = useState(true);
+  const [isPageLoaded, setIsPageLoaded] = useState(() => document.readyState === "complete");
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -24,12 +25,20 @@ function App() {
       history.scrollRestoration = "manual";
     }
     window.scrollTo(0, 0);
+
+    const handlePageLoad = () => setIsPageLoaded(true);
+
+    if (document.readyState !== "complete") {
+      window.addEventListener("load", handlePageLoad);
+    }
+
+    return () => window.removeEventListener("load", handlePageLoad);
   }, []);
 
   return (
     <>
       <audio ref={audioRef} src={audio} />
-      <PageLoader isVisible={isLoaderVisible} onStart={() => setIsLoaderVisible(false)} audioRef={audioRef} />
+      <PageLoader isVisible={isLoaderVisible} isPageLoaded={isPageLoaded} onStart={() => setIsLoaderVisible(false)} audioRef={audioRef} />
       <div className={s.page}>
         <div className={s.page__container}>
           <WelcomeSection />

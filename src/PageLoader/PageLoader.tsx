@@ -4,11 +4,12 @@ import s from "./PageLoader.module.scss";
 
 interface IPageLoaderProps {
   isVisible: boolean;
+  isPageLoaded: boolean;
   onStart: () => void;
   audioRef: React.RefObject<HTMLAudioElement | null>;
 }
 
-export const PageLoader = ({ isVisible, onStart, audioRef }: IPageLoaderProps) => {
+export const PageLoader = ({ isVisible, isPageLoaded, onStart, audioRef }: IPageLoaderProps) => {
   const handleStart = () => {
     audioRef.current?.play().catch(() => {});
     onStart();
@@ -32,19 +33,29 @@ export const PageLoader = ({ isVisible, onStart, audioRef }: IPageLoaderProps) =
               Руслан & Валерия
             </motion.p>
 
-            <div className={s.loader__buttonWrapper}>
-              <motion.button
-                className={s.loader__button}
-                onClick={handleStart}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                whileTap={{ scale: 0.96 }}
-                whileHover={{ y: -2 }}
-              >
-                Открыть приглашение
-              </motion.button>
-            </div>
+            {!isPageLoaded ? (
+              <motion.div className={s.loader__status} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }}>
+                <div className={s.loader__dots}>
+                  <motion.span className={s.loader__dot} animate={{ y: [0, -8, 0] }} transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }} />
+                  <motion.span className={s.loader__dot} animate={{ y: [0, -8, 0] }} transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut", delay: 0.15 }} />
+                  <motion.span className={s.loader__dot} animate={{ y: [0, -8, 0] }} transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }} />
+                </div>
+              </motion.div>
+            ) : (
+              <div className={s.loader__buttonWrapper}>
+                <motion.button
+                  className={s.loader__button}
+                  onClick={handleStart}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  whileTap={{ scale: 0.96 }}
+                  whileHover={{ y: -2 }}
+                >
+                  Открыть приглашение
+                </motion.button>
+              </div>
+            )}
           </div>
         </motion.div>
       )}
