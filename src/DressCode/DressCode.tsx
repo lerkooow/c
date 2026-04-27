@@ -2,8 +2,14 @@ import { useRef, useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
+import beige from "../assets/beige.svg";
+import blue from "../assets/blue.svg";
+import pink from "../assets/pink.svg";
+import caramel from "../assets/caramel.svg";
+import yellow from "../assets/yellow2.jpg";
+import green from "../assets/green1.jpg";
+
 import s from "./DressCode.module.scss";
-import { dressCodeColors } from "../data";
 
 export const DressCode = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -27,20 +33,72 @@ export const DressCode = () => {
 
       <div className={s.dressCode__carouselWrap}>
         <div className={s.dressCode__carousel} ref={carouselRef} onScroll={handleScroll}>
-          {dressCodeColors.map((color, index) => (
-            <motion.div
-              key={color.img}
-              className={s.dressCode__card}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <div className={s.dressCode__cardInner}>
-                <img src={color.img} alt={color.name} className={s.dressCode__cardImg} />
-              </div>
-            </motion.div>
-          ))}
+          <motion.div
+            className={s.dressCode__card}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0 * 0.06, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className={s.dressCode__cardInner}>
+              <img src={beige} alt="Бежевый" className={s.dressCode__cardImg} />
+            </div>
+          </motion.div>
+          <motion.div
+            className={s.dressCode__card}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 1 * 0.06, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className={s.dressCode__cardInner}>
+              <img src={blue} alt="Нежно-голубой" className={s.dressCode__cardImg} />
+            </div>
+          </motion.div>
+          <motion.div
+            className={s.dressCode__card}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 1 * 0.06, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className={s.dressCode__cardInner}>
+              <img src={pink} alt="Нежно-розовый" className={s.dressCode__cardImg} />
+            </div>
+          </motion.div>
+          <motion.div
+            className={s.dressCode__card}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 1 * 0.06, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className={s.dressCode__cardInner}>
+              <img src={caramel} alt="Карамельный" className={s.dressCode__cardImg} />
+            </div>
+          </motion.div>
+          <motion.div
+            className={s.dressCode__card}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 1 * 0.06, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className={s.dressCode__cardInner}>
+              <img src={yellow} alt="Нежно-желтый" className={s.dressCode__cardImg} />
+            </div>
+          </motion.div>
+          <motion.div
+            className={s.dressCode__card}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 1 * 0.06, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className={s.dressCode__cardInner}>
+              <img src={green} alt="Нежно-зеленый" className={s.dressCode__cardImg} />
+            </div>
+          </motion.div>
         </div>
 
         <AnimatePresence>

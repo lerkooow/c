@@ -2,18 +2,24 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import s from "./PageLoader.module.scss";
 
-type TPageLoaderProps = {
+interface IPageLoaderProps {
   isVisible: boolean;
-};
+  onStart: () => void;
+  audioRef: React.RefObject<HTMLAudioElement>;
+}
 
-export const PageLoader = ({ isVisible }: TPageLoaderProps) => {
+export const PageLoader = ({ isVisible, onStart, audioRef }: IPageLoaderProps) => {
+  const handleStart = () => {
+    audioRef.current?.play().catch(() => {});
+    onStart();
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div className={s.loader} initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7, ease: "easeInOut" }}>
           <div className={s.loader__blob1} />
           <div className={s.loader__blob2} />
-
           <div className={s.loader__content}>
             <motion.div className={s.loader__heart} animate={{ scale: [1, 1.12, 1] }} transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}>
               <svg width="56" height="52" viewBox="0 0 56 52" fill="none">
@@ -26,10 +32,18 @@ export const PageLoader = ({ isVisible }: TPageLoaderProps) => {
               Руслан & Валерия
             </motion.p>
 
-            <div className={s.loader__dots}>
-              {[0, 1, 2].map((i) => (
-                <motion.span key={i} className={s.loader__dot} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }} />
-              ))}
+            <div className={s.loader__buttonWrapper}>
+              <motion.button
+                className={s.loader__button}
+                onClick={handleStart}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                whileTap={{ scale: 0.96 }}
+                whileHover={{ y: -2 }}
+              >
+                Открыть приглашение
+              </motion.button>
             </div>
           </div>
         </motion.div>

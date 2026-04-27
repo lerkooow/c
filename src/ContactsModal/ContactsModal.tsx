@@ -34,10 +34,9 @@ export const ContactsModal = ({ closeContactsModal }: TContactsModalProps) => {
 
         <p className={s.modal__sub}>Вы можете связаться с Анастасией любым удобным Вам способом</p>
         <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexDirection: "column" }}>
-          <a href="" className={s.modal__button} onClick={handleCopyClick}>
+          <button className={s.modal__button} onClick={handleCopyClick}>
             {isCopied ? "Номер скопирован!" : "Скопировать номер"}
-          </a>
-
+          </button>
           <a href="https://wa.me/79870951395" target="_blank" className={s.modal__button}>
             WhatsApp
           </a>

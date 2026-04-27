@@ -64,4 +64,37 @@
     background-color: #a0bbd6;
     display: block;
   }
+
+  &__button {
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #a0bbd6 0%, #8eabd9 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 24px rgba(142, 171, 217, 0.35);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      box-shadow: 0 12px 32px rgba(142, 171, 217, 0.5);
+      background: linear-gradient(135deg, #b0cbd6 0%, #9ebbdd 100%);
+    }
+
+    &:active {
+      box-shadow: 0 4px 12px rgba(142, 171, 217, 0.3);
+    }
+  }
+
+  &__buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
 }

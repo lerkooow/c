@@ -86,7 +86,7 @@ export const DateWithPath = () => {
         <ScheduleItem top={110} left={85} time="15:30" labels={["Сбор гостей", "Фуршет"]} direction="left" delay={0} />
         <ScheduleItem top={240} right={70} time="16:30" labels={["Начало нашей", "свадебной церемонии"]} direction="right" delay={0} />
         <ScheduleItem top={335} left={10} time="17:00" labels={["Банкет"]} direction="left" delay={0} />
-        <ScheduleItem top={465} left={60} time="23:00" labels={["Трогательное завершение нашего свадебного дня"]} direction="left" delay={0} />
+        <ScheduleItem top={465} left={60} time="23:00" labels={["Завершение нашего свадебного дня"]} direction="left" delay={0} />
       </div>
     </div>
   );

@@ -73,8 +73,8 @@ export const Form = () => {
               <input className={s.form__input} placeholder="Имя, возраст" value={children} onChange={(e) => setChildren(e.target.value)} />
             </div>
             <div className={s.form__item}>
-              <label>Аллергия, предпочтения по еде (рыба, мясо, веганское и т.д.)</label>
-              <input className={s.form__input} placeholder="Я предпочитаю..." value={allergies} onChange={(e) => setAllergies(e.target.value)} />
+              <label>Аллергия (если есть)</label>
+              <input className={s.form__input} placeholder="У меня аллергия на..." value={allergies} onChange={(e) => setAllergies(e.target.value)} />
             </div>
             <DrinksBlock drinks={drinks} toggleDrink={toggleDrink} otherDrink={otherDrink} setOtherDrink={setOtherDrink} />
           </div>
@@ -95,8 +95,8 @@ export const Form = () => {
               <input className={s.form__input} placeholder="Имя, возраст" value={children} onChange={(e) => setChildren(e.target.value)} />
             </div>
             <div className={s.form__item}>
-              <label>Аллергия, предпочтения по еде (рыба, мясо, веганское и т.д.)</label>
-              <input className={s.form__input} placeholder="Я предпочитаю..." value={allergies} onChange={(e) => setAllergies(e.target.value)} />
+              <label>Аллергия (если есть)</label>
+              <input className={s.form__input} placeholder="У меня аллергия на..." value={allergies} onChange={(e) => setAllergies(e.target.value)} />
             </div>
             <DrinksBlock drinks={drinks} toggleDrink={toggleDrink} otherDrink={otherDrink} setOtherDrink={setOtherDrink} />
           </div>

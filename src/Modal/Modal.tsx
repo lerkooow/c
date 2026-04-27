@@ -23,8 +23,7 @@ export const Modal = ({ closeSuccessModal }: TModalProps) => {
         </div>
 
         <h3 className={s.modal__title}>Спасибо!</h3>
-        <p className={s.modal__sub}>Ваша анкета успешно отправлена</p>
-        <p className={s.modal__text}>Мы очень ждём встречи с вами 🤍</p>
+        <p className={s.modal__sub}>Ваши ответы успешно отправлены🤍</p>
       </div>
     </div>
   );

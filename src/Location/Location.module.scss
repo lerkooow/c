@@ -23,10 +23,16 @@
     color: #6a90b5;
     font-family: "Comfortaa", sans-serif;
     margin: 0;
-    line-height: 1;
+    line-height: 0.9;
     padding-bottom: 8px;
     font-weight: 400;
     margin-left: 24px;
+
+    span {
+      font-family: "Great Vibes", cursive;
+      font-size: 48px;
+      text-transform: lowercase;
+    }
   }
 
   &__description {

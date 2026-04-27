@@ -22,7 +22,7 @@ export const Details = () => {
 
       <div className={s.details__container}>
         <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }}>
-          Чтобы праздник прошёл комфортно для всех гостей, мы подготовили анкету. Пожалуйста, заполните её до <span style={{ color: "#4a6a8a" }}>26.05.2026</span>
+          Чтобы праздник прошёл комфортно для всех гостей, мы подготовили анкету. Пожалуйста, заполните её до <span style={{ color: "#4a6a8a" }}>06.06.2026</span>
         </motion.p>
 
         <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }} viewport={{ once: true }}>

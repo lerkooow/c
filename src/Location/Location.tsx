@@ -18,7 +18,7 @@ export const Location = () => {
         <h3 className={s.location__title}>
           МЕСТО ПРОВЕДЕНИЯ
           <br />
-          ТОРЖЕСТВА
+          <span>ТОРЖЕСТВА</span>
         </h3>
       </div>
       <p className={s.location__description}>
@@ -29,7 +29,7 @@ export const Location = () => {
       <motion.div className={s.location__map} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
         <span>Шатер Хотим Едим</span>
         <p className={s.location__address}>г. Уфа, Озеро Архимандритское</p>
-        <a href="https://2gis.ru/ufa/geo/2393147187396611/55.938058,54.646368" target="_blank" className={s.location__button}>
+        <a href="https://go.2gis.com/yv3ww" target="_blank" className={s.location__button}>
           Открыть карту
         </a>
       </motion.div>
