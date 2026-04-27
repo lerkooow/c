@@ -8,7 +8,7 @@ import speaker from "../assets/speaker.svg";
 import s from "./Greetings.module.scss";
 
 interface IGreetings {
-  audioRef: React.RefObject<HTMLAudioElement>;
+  audioRef: React.RefObject<HTMLAudioElement | null>;
 }
 
 export const Greetings = ({ audioRef }: IGreetings) => {

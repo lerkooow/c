@@ -17,7 +17,7 @@ import s from "./App.module.scss";
 
 function App() {
   const [isLoaderVisible, setIsLoaderVisible] = useState(true);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if ("scrollRestoration" in history) {

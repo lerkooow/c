@@ -5,7 +5,7 @@ import s from "./PageLoader.module.scss";
 interface IPageLoaderProps {
   isVisible: boolean;
   onStart: () => void;
-  audioRef: React.RefObject<HTMLAudioElement>;
+  audioRef: React.RefObject<HTMLAudioElement | null>;
 }
 
 export const PageLoader = ({ isVisible, onStart, audioRef }: IPageLoaderProps) => {
